@@ -418,7 +418,104 @@ export default function Home() {
 
       </section>
 
-      {/* ===== Section 4: Get Started (Final Section) ===== */}
+      {/* ===== Section 4: Full Control ===== */}
+      <section className="control-section" style={{ maxWidth: "80rem" }}>
+        <div className="control-headline">
+          <div className="control-line">We give you full</div>
+          <div className="control-line"><span className="control-word-faded">control</span> over your data</div>
+        </div>
+
+        <div className="control-grid">
+          {/* Card 1 */}
+          <div className="control-card">
+            <div className="control-card-grid-bg"></div>
+            <div className="control-card-content">
+              <div className="control-mockup-wrapper">
+                
+                {/* Conversion Rate Card */}
+                <div className="mockup-conv-rate">
+                  <div className="conv-header">Conversion rate</div>
+                  <div className="conv-val-box">2,3%</div>
+                  <div className="conv-desc">Percentage of website visitors</div>
+                </div>
+
+                {/* Sales Revenue Card */}
+                <div className="mockup-sales-revenue">
+                  <div className="sales-rev-header">Sales revenue</div>
+                  <div className="sales-rev-val">$ 131,2K</div>
+                  <div className="sales-rev-bar"></div>
+                  
+                  <div className="sales-rev-stat-row">
+                    <span>Min. price</span>
+                    <span>1,200 $</span>
+                  </div>
+                  <div className="sales-rev-stat-row">
+                    <span>Max. price</span>
+                    <span>2,320 $</span>
+                  </div>
+                  <div className="sales-rev-stat-row">
+                    <span>Engagement rate</span>
+                    <span>47.84%</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <h3>Improved customer service</h3>
+              <p>
+                SEO insights help optimize conversion processes by providing information on how to improve interactions with customers and increase their satisfaction.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="control-card">
+            <div className="control-card-grid-bg"></div>
+            <div className="control-card-content">
+              <div className="control-mockup-wrapper">
+                
+                {/* Finance Reports tab */}
+                <div className="mockup-finance-report">
+                  <Layers size={14} color="#888"/>
+                  <span>Finance reports</span>
+                </div>
+
+                {/* Insights Main Card */}
+                <div className="mockup-insights-card">
+                  <div className="insights-header">
+                    <Activity size={12} color="#888"/>
+                    <span>Insights</span>
+                  </div>
+                  
+                  <div className="insights-profit-row">
+                    <div>
+                      <div className="mockup-label" style={{fontSize: "0.75rem", marginBottom: "4px"}}>Total profit</div>
+                      <div className="insights-profit-val">$ 264,2K</div>
+                      <div className="insights-pill">Data visualization</div>
+                    </div>
+
+                    {/* Mini chart visual */}
+                    <div className="insights-chart-preview">
+                      <div className="insights-chart-bar" style={{height: "30px"}}></div>
+                      <div className="insights-chart-bar" style={{height: "45px"}}></div>
+                      <div className="insights-chart-bar active" style={{height: "60px"}}></div>
+                      <div className="insights-chart-bar" style={{height: "25px"}}></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <h3>Monitoring key indicators</h3>
+              <p>
+                SEO platforms allow businesses to track KPIs, an important tool for measuring success and achieving goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Section 5: Get Started (Final Section) ===== */}
       <section className="get-started-section">
         {/* Soft shadow orange icon */}
         <div className="get-started-icon">

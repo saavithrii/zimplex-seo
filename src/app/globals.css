@@ -1757,7 +1757,273 @@ a { text-decoration: none; color: inherit; }
     order: 2;
   }
   .footer-qr-container {
-    order: 3;
   }
 }
+
+/* ===================================================
+   Section 3.8 — Full Control
+   =================================================== */
+.control-section {
+  background: white;
+  border-radius: 2.5rem;
+  margin: 0 1rem 5rem;
+  padding: 5rem 3rem;
+  position: relative;
+  width: 100%;
+}
+
+.control-headline {
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.control-line {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #111;
+}
+
+.control-word-faded {
+  color: #c8cdd2;
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.control-card {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 2rem;
+  padding: 3rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.control-card-grid-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+    linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.control-card-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.control-mockup-wrapper {
+  height: 220px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.control-card h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.control-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+/* Mockup Elements: Card 1 (Customer Service) */
+.mockup-conv-rate {
+  position: absolute;
+  left: 5%;
+  top: 10px;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  width: 170px;
+  text-align: left;
+  border: 1px solid #F3F4F6;
+  transform: rotate(-5deg);
+}
+
+.conv-header {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.conv-val-box {
+  background: var(--accent-yellow);
+  color: #111;
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.conv-desc {
+  font-size: 0.65rem;
+  color: #aaa;
+}
+
+.mockup-sales-revenue {
+  position: absolute;
+  right: 5%;
+  top: 30px;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  width: 200px;
+  text-align: left;
+  border: 1px solid #F3F4F6;
+  transform: rotate(3deg);
+  z-index: 2;
+}
+
+.sales-rev-header {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.sales-rev-val {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.sales-rev-bar {
+  height: 4px;
+  background: var(--accent-green);
+  border-radius: 2px;
+  margin-bottom: 0.8rem;
+  width: 80%;
+}
+
+.sales-rev-stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+.sales-rev-stat-row span:last-child {
+  font-weight: 600;
+  color: #111;
+}
+
+/* Mockup Elements: Card 2 (Key Indicators) */
+.mockup-finance-report {
+  position: absolute;
+  top: 10px;
+  background: white;
+  border-radius: 1rem;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+  width: 200px;
+  border: 1px solid #F3F4F6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transform: translateY(-10px);
+  z-index: 1;
+}
+
+.mockup-insights-card {
+  position: absolute;
+  top: 45px;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  width: 310px;
+  border: 1px solid #F3F4F6;
+  z-index: 2;
+  text-align: left;
+}
+
+.insights-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.insights-profit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.insights-profit-val {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.insights-pill {
+  background: var(--accent-yellow);
+  color: #111;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.insights-chart-preview {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 60px;
+}
+
+.insights-chart-bar {
+  width: 14px;
+  background: #F3F4F6;
+  border-radius: 3px 3px 0 0;
+}
+
+.insights-chart-bar.active {
+  background: var(--accent-yellow);
+}
+
+@media (max-width: 1024px) {
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
