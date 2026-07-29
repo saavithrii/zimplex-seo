@@ -2235,21 +2235,242 @@ a { text-decoration: none; color: inherit; }
   .new-nav {
     display: none;
   }
-  .hand-cursor-icon {
+}
+
+/* ===================================================
+   Studio Header & Hero (Tubik Style)
+   =================================================== */
+.studio-header {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: #f4f4f4;
+  padding: 1.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.studio-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.04em;
+}
+
+.studio-logo-icon {
+  color: #111;
+}
+
+.studio-nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.studio-nav a {
+  color: #111;
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.studio-nav a:hover {
+  opacity: 0.6;
+}
+
+.studio-actions {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.studio-lang {
+  border: 1px solid #111;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.studio-contact {
+  color: #2563EB;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.studio-contact:hover {
+  opacity: 0.8;
+}
+
+/* Hero Section */
+.studio-hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: #f4f4f4;
+  padding: 4rem 4rem 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.studio-hero-container {
+  width: 100%;
+  max-width: 80rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Column */
+.studio-hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.studio-hero-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.studio-hero-title {
+  font-size: clamp(3.5rem, 8vw, 6.2rem);
+  font-weight: 500;
+  color: #111;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  margin-bottom: 4rem;
+}
+
+.studio-hero-title div {
+  margin-bottom: 0.2rem;
+}
+
+.studio-hero-awards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.awards-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.05em;
+}
+
+.awards-logos {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.award-logo {
+  opacity: 0.8;
+}
+
+/* Right Column */
+.studio-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.studio-showreel-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+  aspect-ratio: 1;
+}
+
+.studio-showreel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.studio-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.studio-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.play-triangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 18px solid #111;
+  border-bottom: 10px solid transparent;
+  margin-left: 4px;
+  margin-bottom: 8px;
+}
+
+.play-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 1024px) {
+  .studio-header {
+    padding: 1.5rem 2rem;
+  }
+  .studio-hero {
+    padding: 4rem 2rem 6rem;
+  }
+  .studio-hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .studio-hero-title {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .studio-nav {
     display: none;
-  }
-  .scattered-tags-container {
-    height: auto !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 1rem !important;
-    padding: 0 1rem !important;
-    margin-top: 3rem !important;
-  }
-  .floating-tag.absolute-tag {
-    position: static !important;
-    transform: none !important;
   }
 }
 

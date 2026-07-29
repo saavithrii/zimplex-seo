@@ -19,85 +19,41 @@ export default function Home() {
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      /* ---- New Hero: Badge fade-in ---- */
+      /* ---- Studio Hero: Badge fade-in ---- */
       gsap.from(heroBadgeRef.current, {
         opacity: 0,
-        y: -20,
+        y: -15,
         duration: 0.6,
         ease: "power3.out",
         delay: 0.1,
       });
 
-      /* ---- New Hero: Title slide-up ---- */
+      /* ---- Studio Hero: Title slide-up ---- */
       gsap.from(heroTitleRef.current, {
         opacity: 0,
-        y: 30,
+        y: 40,
         duration: 0.8,
         ease: "power3.out",
         delay: 0.2,
       });
 
-      /* ---- New Hero: Description fade-in ---- */
-      gsap.from(heroDescRef.current, {
+      /* ---- Studio Hero: Awards fade-in ---- */
+      gsap.from(heroCtasRef.current, {
         opacity: 0,
         y: 20,
         duration: 0.7,
         ease: "power3.out",
-        delay: 0.35,
+        delay: 0.45,
       });
 
-      /* ---- New Hero: CTAs slide-up ---- */
-      gsap.from(heroCtasRef.current, {
+      /* ---- Studio Hero: Showreel card slide-in/scale ---- */
+      gsap.from(heroDescRef.current, {
         opacity: 0,
-        y: 15,
-        duration: 0.6,
+        scale: 0.95,
+        x: 30,
+        duration: 0.85,
         ease: "power3.out",
-        delay: 0.5,
-      });
-
-      /* ---- New Hero: Floating tags stagger pop-in ---- */
-      gsap.from(".floating-tag", {
-        opacity: 0,
-        scale: 0.8,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.04,
-        ease: "back.out(1.5)",
-        delay: 0.6,
-      });
-
-      /* ---- Scroll Parallax for Scattered Tags ---- */
-      gsap.to(".absolute-tag:nth-child(3n+1)", {
-        scrollTrigger: {
-          trigger: ".new-hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1.5,
-        },
-        x: -80,
-        y: -30,
-      });
-
-      gsap.to(".absolute-tag:nth-child(3n+2)", {
-        scrollTrigger: {
-          trigger: ".new-hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1.5,
-        },
-        x: 80,
-        y: 30,
-      });
-
-      gsap.to(".absolute-tag:nth-child(3n)", {
-        scrollTrigger: {
-          trigger: ".new-hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1.5,
-        },
-        x: -40,
-        y: 60,
+        delay: 0.35,
       });
 
       /* ---- Section 2: content card slides up on scroll ---- */
@@ -214,62 +170,66 @@ export default function Home() {
     <div style={{ width: "100%", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
       {/* Header */}
-      <header className="new-header">
-        <div className="new-logo">
+      <header className="studio-header">
+        <div className="studio-logo">
+          <svg className="studio-logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+            <path d="M12 6a3.5 3.5 0 0 0-3.5 3.5c0 .77.34 1.34.8 1.8l-1.3 2.7H16l-1.3-2.7c.46-.46.8-1.03.8-1.8A3.5 3.5 0 0 0 12 6z"/>
+          </svg>
           zimplex
         </div>
 
-        <nav className="new-nav">
-          <Link href="#">How it Works</Link>
-          <Link href="#">Benefits</Link>
-          <Link href="#">Testimonials</Link>
+        <nav className="studio-nav">
+          <Link href="#">work</Link>
+          <Link href="#">services</Link>
+          <Link href="#">about</Link>
+          <Link href="#">blog</Link>
+          <Link href="#">lab</Link>
         </nav>
 
-        <div className="new-actions">
-          <Link href="#" className="new-login">Log In</Link>
-          <Link href="#" className="new-btn-primary">Start Practicing</Link>
+        <div className="studio-actions">
+          <span className="studio-lang">UA</span>
+          <Link href="#" className="studio-contact">contact us</Link>
         </div>
       </header>
 
       {/* ===== Hero Section ===== */}
-      <section className="new-hero">
-        <div ref={heroBadgeRef} className="new-hero-badge">
-          ✨ Introducing
-        </div>
+      <section className="studio-hero">
+        <div className="studio-hero-container">
+          {/* Left Column */}
+          <div className="studio-hero-left">
+            <div className="studio-hero-badge" ref={heroBadgeRef}>
+              WE ARE A DESIGN & SEO STUDIO
+            </div>
+            
+            <h1 className="studio-hero-title" ref={heroTitleRef}>
+              <div>Crafting</div>
+              <div>SEO growth</div>
+              <div>and brands</div>
+            </h1>
 
-        <h1 ref={heroTitleRef} className="new-hero-title">
-          A platform that helps you <span className="blue-highlight">rank</span>,<br />
-          not just <span className="blue-highlight">track</span>
-          <svg className="hand-cursor-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 28C10.5 28 9.5 27 9 25.5L4.5 14C3.8 12.3 4.8 10.5 6.5 10.5C7.2 10.5 7.8 10.8 8.3 11.3L11 14V4.5C11 2.8 12.3 1.5 14 1.5C15.7 1.5 17 2.8 17 4.5V11C17 9.3 18.3 8 20 8C21.7 8 23 9.3 23 11V12.5C23 11.4 24.1 10.5 25.2 10.5C26.3 10.5 27.2 11.4 27.2 12.5V15.5C27.2 14.7 28.1 14 29 14C29.9 14 30.8 14.7 30.8 15.8V21C30.8 24.9 27.6 28 23.8 28H12Z" fill="#EBF5FB" stroke="#2563EB" strokeWidth="2" strokeLinejoin="round"/>
-          </svg>
-        </h1>
+            <div className="studio-hero-awards" ref={heroCtasRef}>
+              <div className="awards-label">PRACTICE, EXCELLENCE, RECOGNITION</div>
+              <div className="awards-logos">
+                <div className="award-logo">W.</div>
+                <div className="award-logo">FWA</div>
+                <div className="award-logo">CSS</div>
+                <div className="award-logo">AWWWARDS</div>
+              </div>
+            </div>
+          </div>
 
-        <p ref={heroDescRef} className="new-hero-desc">
-          Master search engine visibility through personalized audits, keyword targeting, and AI-driven optimizations.
-        </p>
-
-        <div ref={heroCtasRef} className="new-hero-ctas">
-          <Link href="#" className="new-btn-text">How it works</Link>
-          <Link href="#" className="new-btn-blue">Start practicing</Link>
-        </div>
-
-        {/* Floating Tags Section */}
-        <div className="scattered-tags-container">
-          <span className="floating-tag absolute-tag tag-blue" style={{ left: "2%", top: "60px", transform: "rotate(-18deg)" }}>Rank Tracker</span>
-          <span className="floating-tag absolute-tag tag-green" style={{ left: "5%", top: "15px", transform: "rotate(-12deg)" }}>Keyword Research</span>
-          <span className="floating-tag absolute-tag tag-purple" style={{ left: "13%", top: "65px", transform: "rotate(2deg)" }}>On-Page SEO</span>
-          <span className="floating-tag absolute-tag tag-green" style={{ left: "18%", top: "10px", transform: "rotate(-10deg)" }}>Link Building</span>
-          <span className="floating-tag absolute-tag tag-green" style={{ left: "17%", top: "85px", transform: "rotate(-2deg)" }}>Site Audit</span>
-          <span className="floating-tag absolute-tag tag-blue" style={{ left: "26%", top: "40px", transform: "rotate(-22deg)" }}>Competitor Analysis</span>
-          <span className="floating-tag absolute-tag tag-green" style={{ left: "39%", top: "65px", transform: "rotate(-15deg)" }}>Content Optimizer</span>
-          <span className="floating-tag absolute-tag tag-purple" style={{ left: "46%", top: "35px", transform: "rotate(-10deg)" }}>Local SEO</span>
-          <span className="floating-tag absolute-tag tag-green" style={{ left: "56%", top: "60px", transform: "rotate(-60deg)" }}>Backlink Monitor</span>
-          <span className="floating-tag absolute-tag tag-blue" style={{ left: "62%", top: "100px", transform: "rotate(3deg)" }}>Traffic Growth</span>
-          <span className="floating-tag absolute-tag tag-blue" style={{ left: "66%", top: "25px", transform: "rotate(-20deg)" }}>Core Web Vitals</span>
-          <span className="floating-tag absolute-tag tag-purple" style={{ left: "76%", top: "80px", transform: "rotate(-15deg)" }}>Daily Tasks</span>
-          <span className="floating-tag absolute-tag tag-purple" style={{ left: "83%", top: "30px", transform: "rotate(-8deg)" }}>Analytics</span>
-          <span className="floating-tag absolute-tag tag-green" style={{ left: "88%", top: "85px", transform: "rotate(-12deg)" }}>Search visibility</span>
+          {/* Right Column */}
+          <div className="studio-hero-right" ref={heroDescRef}>
+            <div className="studio-showreel-card">
+              <img src="/images/showreel_collage.png" alt="Zimplex Showreel" className="studio-showreel-img" />
+              
+              <div className="studio-play-btn">
+                <div className="play-triangle"></div>
+                <div className="play-text">play showreel</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
