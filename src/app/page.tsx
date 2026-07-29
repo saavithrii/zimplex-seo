@@ -222,8 +222,87 @@ export default function Home() {
 
           {/* Right Column */}
           <div className="studio-hero-right" ref={heroDescRef}>
-            <div className="studio-showreel-card">
-              <img src="/images/analytics_dashboard.png" alt="Zimplex SEO Analytics Dashboard" className="studio-showreel-img" />
+            <div className="seo-dashboard-container">
+              {/* Header inside the dashboard */}
+              <div className="dashboard-header">
+                <div className="dashboard-title-group">
+                  <div className="dashboard-badge">LIVE TRACKING</div>
+                  <h4 className="dashboard-title">SEO Overview</h4>
+                </div>
+                <span className="dashboard-sync-tag">Updated 2m ago</span>
+              </div>
+
+              {/* Grid of Mini Stats */}
+              <div className="dashboard-stats-grid">
+                <div className="dash-stat-card">
+                  <div className="dash-stat-label">Organic Visibility</div>
+                  <div className="dash-stat-value-row">
+                    <span className="dash-stat-value">78.4%</span>
+                    <span className="dash-stat-change green"><ArrowUp size={12} /> +12.8%</span>
+                  </div>
+                </div>
+
+                <div className="dash-stat-card">
+                  <div className="dash-stat-label">Keywords in Top 3</div>
+                  <div className="dash-stat-value-row">
+                    <span className="dash-stat-value">1,482</span>
+                    <span className="dash-stat-change green"><ArrowUp size={12} /> +46</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chart Section */}
+              <div className="dashboard-chart-box">
+                <div className="chart-header">
+                  <span className="chart-title">Visibility Growth</span>
+                  <span className="chart-legend">Oct 1 - Oct 30</span>
+                </div>
+                <div className="chart-svg-wrapper">
+                  <svg width="100%" height="110" viewBox="0 0 320 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Grid lines */}
+                    <line x1="0" y1="20" x2="320" y2="20" stroke="#f1f5f9" strokeWidth="1" />
+                    <line x1="0" y1="55" x2="320" y2="55" stroke="#f1f5f9" strokeWidth="1" />
+                    <line x1="0" y1="90" x2="320" y2="90" stroke="#f1f5f9" strokeWidth="1" />
+                    
+                    {/* Gradient Area under curve */}
+                    <path d="M0 90 L40 70 L80 80 L120 50 L160 65 L200 30 L240 40 L280 15 L320 25 L320 110 L0 110 Z" fill="url(#chartGrad)" opacity="0.15" />
+                    
+                    {/* Line path */}
+                    <path d="M0 90 L40 70 L80 80 L120 50 L160 65 L200 30 L240 40 L280 15 L320 25" stroke="#FE4F32" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                    
+                    {/* Pulsing Dots */}
+                    <circle cx="40"  cy="70" r="4" fill="#FE4F32" />
+                    <circle cx="120" cy="50" r="4" fill="#FE4F32" />
+                    <circle cx="200" cy="30" r="4" fill="#FE4F32" />
+                    <circle cx="280" cy="15" r="5" fill="#FE4F32" stroke="white" strokeWidth="2" />
+                    
+                    <defs>
+                      <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="110" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#FE4F32" />
+                        <stop offset="1" stopColor="#FE4F32" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+
+              {/* Mini keyword tracker widget floating */}
+              <div className="dashboard-keyword-float">
+                <div className="keyword-header">
+                  <span className="keyword-title">Top Rankings</span>
+                  <span className="badge-yellow">1st Page</span>
+                </div>
+                <div className="keyword-rows">
+                  <div className="keyword-row">
+                    <span className="keyword-name">zimplex seo service</span>
+                    <span className="keyword-rank">#1</span>
+                  </div>
+                  <div className="keyword-row">
+                    <span className="keyword-name">rank tracking dashboard</span>
+                    <span className="keyword-rank-up">#3 <ArrowUp size={10} /> +4</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
