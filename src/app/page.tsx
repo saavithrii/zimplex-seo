@@ -61,9 +61,30 @@ export default function Home() {
         scale: 0.8,
         y: 30,
         duration: 0.8,
-        stagger: 0.05,
+        stagger: 0.04,
         ease: "back.out(1.5)",
         delay: 0.6,
+      });
+
+      /* ---- Scroll Animation for Floating Tags ---- */
+      gsap.to(".tags-row-1", {
+        scrollTrigger: {
+          trigger: ".new-hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1.5,
+        },
+        x: -200,
+      });
+
+      gsap.to(".tags-row-2", {
+        scrollTrigger: {
+          trigger: ".new-hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1.5,
+        },
+        x: 200,
       });
 
       /* ---- Section 2: content card slides up on scroll ---- */
@@ -222,18 +243,22 @@ export default function Home() {
 
         {/* Floating Tags Section */}
         <div className="floating-tags-container">
-          <span className="floating-tag tag-blue" style={{ transform: "rotate(-3deg)" }}>Rank Tracker</span>
-          <span className="floating-tag tag-green" style={{ transform: "rotate(4deg)" }}>Keyword Research</span>
-          <span className="floating-tag tag-purple" style={{ transform: "rotate(-2deg)" }}>On-Page SEO</span>
-          <span className="floating-tag tag-yellow" style={{ transform: "rotate(2deg)" }}>Link Building</span>
-          <span className="floating-tag tag-rose" style={{ transform: "rotate(-4deg)" }}>Site Audit</span>
-          <span className="floating-tag tag-blue" style={{ transform: "rotate(3deg)" }}>Competitor Analysis</span>
-          <span className="floating-tag tag-green" style={{ transform: "rotate(-1deg)" }}>Content Optimizer</span>
-          <span className="floating-tag tag-purple" style={{ transform: "rotate(5deg)" }}>Local SEO</span>
-          <span className="floating-tag tag-yellow" style={{ transform: "rotate(-3deg)" }}>Backlink Monitor</span>
-          <span className="floating-tag tag-rose" style={{ transform: "rotate(2deg)" }}>Traffic Growth</span>
-          <span className="floating-tag tag-blue" style={{ transform: "rotate(-5deg)" }}>Core Web Vitals</span>
-          <span className="floating-tag tag-green" style={{ transform: "rotate(3deg)" }}>Daily Tasks</span>
+          <div className="tags-row-1">
+            <span className="floating-tag tag-blue" style={{ transform: "rotate(-3deg)" }}>Rank Tracker</span>
+            <span className="floating-tag tag-green" style={{ transform: "rotate(4deg)" }}>Keyword Research</span>
+            <span className="floating-tag tag-purple" style={{ transform: "rotate(-2deg)" }}>On-Page SEO</span>
+            <span className="floating-tag tag-yellow" style={{ transform: "rotate(2deg)" }}>Link Building</span>
+            <span className="floating-tag tag-rose" style={{ transform: "rotate(-4deg)" }}>Site Audit</span>
+            <span className="floating-tag tag-blue" style={{ transform: "rotate(3deg)" }}>Competitor Analysis</span>
+            <span className="floating-tag tag-green" style={{ transform: "rotate(-1deg)" }}>Content Optimizer</span>
+          </div>
+          <div className="tags-row-2">
+            <span className="floating-tag tag-purple" style={{ transform: "rotate(5deg)" }}>Local SEO</span>
+            <span className="floating-tag tag-yellow" style={{ transform: "rotate(-3deg)" }}>Backlink Monitor</span>
+            <span className="floating-tag tag-rose" style={{ transform: "rotate(2deg)" }}>Traffic Growth</span>
+            <span className="floating-tag tag-blue" style={{ transform: "rotate(-5deg)" }}>Core Web Vitals</span>
+            <span className="floating-tag tag-green" style={{ transform: "rotate(3deg)" }}>Daily Tasks</span>
+          </div>
         </div>
       </section>
 

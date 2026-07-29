@@ -2195,14 +2195,23 @@ a { text-decoration: none; color: inherit; }
 /* Floating Tags Container */
 .floating-tags-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem 1.8rem;
-  max-width: 90rem;
-  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
   position: relative;
   z-index: 2;
   padding: 0 1rem;
+}
+
+.tags-row-1, .tags-row-2 {
+  display: flex;
+  gap: 1.8rem;
+  white-space: nowrap;
+  width: max-content;
+  will-change: transform;
 }
 
 .floating-tag {
