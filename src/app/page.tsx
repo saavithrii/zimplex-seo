@@ -10,68 +10,60 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   /* ---- Refs ---- */
-  const iconGrayRef   = useRef<HTMLDivElement>(null);
-  const iconOrangeRef = useRef<HTMLDivElement>(null);
-  const iconYellowRef = useRef<HTMLDivElement>(null);
-  const laptopRef     = useRef<HTMLDivElement>(null);
-  const playRef       = useRef<HTMLDivElement>(null);
+  const heroBadgeRef  = useRef<HTMLDivElement>(null);
+  const heroTitleRef  = useRef<HTMLHeadingElement>(null);
+  const heroDescRef   = useRef<HTMLParagraphElement>(null);
+  const heroCtasRef   = useRef<HTMLDivElement>(null);
   const statWidgetRef = useRef<HTMLDivElement>(null);
-  const heroLinesRef  = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      /* ---- Hero: stagger in the text lines ---- */
-      gsap.from(".hero-line", {
+      /* ---- New Hero: Badge fade-in ---- */
+      gsap.from(heroBadgeRef.current, {
         opacity: 0,
-        y: 40,
-        duration: 0.7,
-        stagger: 0.12,
+        y: -20,
+        duration: 0.6,
         ease: "power3.out",
         delay: 0.1,
       });
 
-      /* ---- Hero: icons pop in with spring-like elastic ease ---- */
-      gsap.from(iconGrayRef.current, {
-        scale: 0,
+      /* ---- New Hero: Title slide-up ---- */
+      gsap.from(heroTitleRef.current, {
         opacity: 0,
-        duration: 0.6,
-        ease: "back.out(2)",
-        delay: 0.3,
+        y: 30,
+        duration: 0.8,
+        ease: "power3.out",
+        delay: 0.2,
       });
 
-      gsap.from(iconOrangeRef.current, {
-        scale: 0,
+      /* ---- New Hero: Description fade-in ---- */
+      gsap.from(heroDescRef.current, {
         opacity: 0,
-        duration: 0.6,
-        ease: "back.out(2)",
-        delay: 0.45,
-      });
-
-      gsap.from(iconYellowRef.current, {
-        scale: 0,
-        opacity: 0,
-        duration: 0.6,
-        ease: "back.out(2)",
-        delay: 0.6,
-      });
-
-      /* ---- Hero: laptop slides in from right ---- */
-      gsap.from(laptopRef.current, {
-        x: 60,
-        opacity: 0,
-        duration: 0.9,
+        y: 20,
+        duration: 0.7,
         ease: "power3.out",
         delay: 0.35,
       });
 
-      /* ---- Hero: play button pops in ---- */
-      gsap.from(playRef.current, {
-        scale: 0,
+      /* ---- New Hero: CTAs slide-up ---- */
+      gsap.from(heroCtasRef.current, {
         opacity: 0,
-        duration: 0.5,
-        ease: "back.out(3)",
-        delay: 1.0,
+        y: 15,
+        duration: 0.6,
+        ease: "power3.out",
+        delay: 0.5,
+      });
+
+      /* ---- New Hero: Floating tags stagger pop-in ---- */
+      gsap.from(".floating-tag", {
+        opacity: 0,
+        scale: 0.8,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.05,
+        ease: "back.out(1.5)",
+        delay: 0.6,
       });
 
       /* ---- Section 2: content card slides up on scroll ---- */
@@ -188,89 +180,60 @@ export default function Home() {
     <div style={{ width: "100%", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
       {/* Header */}
-      <div style={{ width: "100%", padding: "0 1rem", maxWidth: "80rem", margin: "0 auto" }}>
-        <header className="header-nav">
-          <div className="header-logo">
-            <div className="logo-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="18" cy="5" r="3"/>
-                <circle cx="6" cy="12" r="3"/>
-                <circle cx="18" cy="19" r="3"/>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-              </svg>
-            </div>
-            zimplex
-          </div>
-
-          <nav className="nav-links">
-            <Link href="#">Services</Link>
-            <Link href="#">Rankings</Link>
-            <Link href="#">Audit</Link>
-            <Link href="#">Pricing</Link>
-            <Link href="#">Contact</Link>
-          </nav>
-
-          <Link href="#" className="btn-signup">Get Started</Link>
-        </header>
-      </div>
-
-      {/* ===== Hero Section ===== */}
-      <section className="hero-section" style={{ maxWidth: "80rem" }}>
-        <div className="hero-content" ref={heroLinesRef}>
-
-          {/* Line 1: [gray+orange icons] SEO */}
-          <div className="hero-line">
-            <div className="icon-pair">
-              <div ref={iconGrayRef} className="icon-gray">
-                <Zap size={34} strokeWidth={2.5} fill="currentColor" />
-              </div>
-              <div ref={iconOrangeRef} className="icon-orange">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                  <circle cx="18" cy="12" r="2.5" fill="white" stroke="none"></circle>
-                  <circle cx="6" cy="12" r="2.5" fill="white" stroke="none"></circle>
-                </svg>
-              </div>
-            </div>
-            <h1 className="hero-title">SEO</h1>
-          </div>
-
-          {/* Line 2: that ranks you */}
-          <div className="hero-line">
-            <h1 className="hero-title">that</h1>
-            <h1 className="hero-title hero-helps">ranks</h1>
-            <h1 className="hero-title">you</h1>
-          </div>
-
-          {/* Line 3: higher [yellow icon] in search */}
-          <div className="hero-line">
-            <h1 className="hero-title">higher</h1>
-            <div ref={iconYellowRef} className="icon-yellow">
-              <BarChart2 size={36} strokeWidth={2.5} />
-            </div>
-            <h1 className="hero-title">in search</h1>
-          </div>
+      <header className="new-header">
+        <div className="new-logo">
+          zimplex
         </div>
 
-        {/* Laptop Graphic */}
-        <div ref={laptopRef} className="laptop-graphic-container">
-          <div className="laptop-bg-gray"></div>
-          <div className="laptop-bg-blue"></div>
+        <nav className="new-nav">
+          <Link href="#">How it Works</Link>
+          <Link href="#">Benefits</Link>
+          <Link href="#">Testimonials</Link>
+        </nav>
 
-          <div className="laptop-device">
-            <div className="laptop-screen-container">
-              <div className="laptop-display-header">1,342,567</div>
-              <div className="laptop-chart-orange"></div>
-              <div className="laptop-chart-yellow"></div>
-            </div>
-            <div className="laptop-keyboard"></div>
-            <div className="laptop-keyboard-thickness"></div>
-          </div>
+        <div className="new-actions">
+          <Link href="#" className="new-login">Log In</Link>
+          <Link href="#" className="new-btn-primary">Start Practicing</Link>
+        </div>
+      </header>
 
-          <div ref={playRef} className="play-btn">
-            <Play size={24} fill="currentColor" style={{ marginLeft: "4px" }} />
-          </div>
+      {/* ===== Hero Section ===== */}
+      <section className="new-hero">
+        <div ref={heroBadgeRef} className="new-hero-badge">
+          ✨ Introducing
+        </div>
+
+        <h1 ref={heroTitleRef} className="new-hero-title">
+          A platform that helps you <span className="blue-highlight">rank</span>,<br />
+          not just <span className="blue-highlight">track</span>
+          <svg className="hand-cursor-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 28C10.5 28 9.5 27 9 25.5L4.5 14C3.8 12.3 4.8 10.5 6.5 10.5C7.2 10.5 7.8 10.8 8.3 11.3L11 14V4.5C11 2.8 12.3 1.5 14 1.5C15.7 1.5 17 2.8 17 4.5V11C17 9.3 18.3 8 20 8C21.7 8 23 9.3 23 11V12.5C23 11.4 24.1 10.5 25.2 10.5C26.3 10.5 27.2 11.4 27.2 12.5V15.5C27.2 14.7 28.1 14 29 14C29.9 14 30.8 14.7 30.8 15.8V21C30.8 24.9 27.6 28 23.8 28H12Z" fill="#EBF5FB" stroke="#2563EB" strokeWidth="2" strokeLinejoin="round"/>
+          </svg>
+        </h1>
+
+        <p ref={heroDescRef} className="new-hero-desc">
+          Master search engine visibility through personalized audits, keyword targeting, and AI-driven optimizations.
+        </p>
+
+        <div ref={heroCtasRef} className="new-hero-ctas">
+          <Link href="#" className="new-btn-text">How it works</Link>
+          <Link href="#" className="new-btn-blue">Start practicing</Link>
+        </div>
+
+        {/* Floating Tags Section */}
+        <div className="floating-tags-container">
+          <span className="floating-tag tag-blue" style={{ transform: "rotate(-3deg)" }}>Rank Tracker</span>
+          <span className="floating-tag tag-green" style={{ transform: "rotate(4deg)" }}>Keyword Research</span>
+          <span className="floating-tag tag-purple" style={{ transform: "rotate(-2deg)" }}>On-Page SEO</span>
+          <span className="floating-tag tag-yellow" style={{ transform: "rotate(2deg)" }}>Link Building</span>
+          <span className="floating-tag tag-rose" style={{ transform: "rotate(-4deg)" }}>Site Audit</span>
+          <span className="floating-tag tag-blue" style={{ transform: "rotate(3deg)" }}>Competitor Analysis</span>
+          <span className="floating-tag tag-green" style={{ transform: "rotate(-1deg)" }}>Content Optimizer</span>
+          <span className="floating-tag tag-purple" style={{ transform: "rotate(5deg)" }}>Local SEO</span>
+          <span className="floating-tag tag-yellow" style={{ transform: "rotate(-3deg)" }}>Backlink Monitor</span>
+          <span className="floating-tag tag-rose" style={{ transform: "rotate(2deg)" }}>Traffic Growth</span>
+          <span className="floating-tag tag-blue" style={{ transform: "rotate(-5deg)" }}>Core Web Vitals</span>
+          <span className="floating-tag tag-green" style={{ transform: "rotate(3deg)" }}>Daily Tasks</span>
         </div>
       </section>
 
