@@ -185,7 +185,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ width: "100%", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", paddingBottom: "5rem" }}>
+    <div style={{ width: "100%", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
       {/* Header */}
       <div style={{ width: "100%", padding: "0 1rem", maxWidth: "80rem", margin: "0 auto" }}>
