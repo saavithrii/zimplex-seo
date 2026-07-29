@@ -365,8 +365,58 @@ export default function Home() {
           </p>
         </div>
       </section>
+      {/* ===== Section 3: Maximize Efficiency ===== */}
+      <section className="maximize-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "3rem" }}>
 
+        {/* Headline */}
+        <div className="maximize-headline">
+          <div className="maximize-line">
+            <span className="maximize-word-dark">Maximize</span>
+            <span className="maximize-word-faded">efficiency</span>
+          </div>
+          <div className="maximize-line">
+            <span className="maximize-word-dark">with our intuitive</span>
+          </div>
+        </div>
 
+        {/* Middle Row */}
+        <div className="maximize-middle">
+          <div ref={statWidgetRef} className="stat-widget">
+            <div className="stat-icon-gray">
+              <Activity size={30} strokeWidth={2.5} color="#ff4f32" />
+            </div>
+            <div className="stat-yellow-circle">
+              <div className="stat-percent">45%</div>
+              <div className="stat-label">System grow<br/>faster</div>
+            </div>
+          </div>
+
+          <div style={{ flex: 1 }} />
+
+          <div className="yellow-pill">
+            <div className="yellow-pill-track">
+              <span>zimplex seo service&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+              <span>zimplex seo service&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+              <span>zimplex seo service&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+              <span>zimplex seo service&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="maximize-divider" />
+
+        <div className="maximize-bottom">
+          <p className="maximize-desc">
+            Explore traffic sources, page behavior, conversions and more to gain deep insight
+            into your audience. With us, your business doesn&apos;t just adapt – it evolves
+          </p>
+          <div className="maximize-ctas">
+            <a href="#" className="btn-demo">Request a demo</a>
+            <a href="#" className="btn-start">Start for free</a>
+          </div>
+        </div>
+
+      </section>
 
       {/* ===== Section 4: Get Started (Final Section) ===== */}
       <section className="get-started-section">
