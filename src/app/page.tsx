@@ -69,7 +69,21 @@ export default function Home() {
         ease: "power3.out",
       });
 
-      /* ---- Section 2: portfolio cards stagger in ---- */
+      /* ---- Section 2: widget cards stagger in ---- */
+      gsap.from([".widget-light", ".widget-dark"], {
+        scrollTrigger: {
+          trigger: ".widgets-grid",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+
+      /* ---- Section 3: portfolio cards stagger in ---- */
       gsap.from(".portfolio-card", {
         scrollTrigger: {
           trigger: ".portfolio-grid",
@@ -308,10 +322,102 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Section 2: Case Studies Grid ===== */}
-      <section className="portfolio-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "4rem" }}>
+      {/* ===== Section 2: Key Benefits (Widgets Grid) ===== */}
+      <section className="content-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "4rem" }}>
+        <div className="content-header">
+          <h2 className="content-title">Your key to strategic success through analytics</h2>
+          <p className="content-subtitle">Ready for exciting, instantaneous, all-accessible insights in real time?</p>
+        </div>
+
+        {/* Widgets Grid */}
+        <div className="widgets-grid">
+
+          {/* Light Card */}
+          <div className="widget-light">
+            <div className="widget-light-content">
+              <div className="report-badge">Setting up reports</div>
+              <h3 className="widget-light-title">Fast and easy access to analytics</h3>
+              <p className="widget-light-desc">
+                One platform is a comprehensive system of solutions that will be the first step towards digitalization of your business!
+              </p>
+            </div>
+
+            {/* Sales Statistic Card */}
+            <div className="sales-card">
+              <h4 className="sales-header">Sales statistic</h4>
+              <div className="sales-profit-row">
+                <div className="profit-icon"><Layers size={26} /></div>
+                <div>
+                  <div className="profit-label">Total profit</div>
+                  <div className="profit-value">$ 264,2K</div>
+                </div>
+              </div>
+              <div className="visitors-box">
+                <div className="visitors-label">Visitors</div>
+                <div className="visitors-row">
+                  <span className="visitors-value">56K</span>
+                  <span className="badge-green"><ArrowUp size={11} /> +14%</span>
+                </div>
+              </div>
+              <div>
+                <div className="visit-stats-label">Visit statistics</div>
+                <svg width="100%" height="75" viewBox="0 0 260 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 65 L37 48 L74 55 L111 38 L148 45 L185 18 L222 28 L260 8" stroke="var(--accent-yellow)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  <circle cx="0"   cy="65" r="3.5" fill="var(--accent-yellow)" />
+                  <circle cx="37"  cy="48" r="3.5" fill="var(--accent-yellow)" />
+                  <circle cx="74"  cy="55" r="3.5" fill="var(--accent-yellow)" />
+                  <circle cx="111" cy="38" r="3.5" fill="var(--accent-yellow)" />
+                  <circle cx="148" cy="45" r="3.5" fill="var(--accent-yellow)" />
+                  <circle cx="185" cy="18" r="3.5" fill="var(--accent-yellow)" />
+                  <circle cx="222" cy="28" r="3.5" fill="var(--accent-yellow)" />
+                  <circle cx="260" cy="8"  r="3.5" fill="var(--accent-yellow)" />
+                </svg>
+                <div className="rate-badge">
+                  <div className="rate-label">Rate</div>
+                  <div className="rate-value">+ 58%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Dark Card */}
+          <div className="widget-dark">
+            <div className="dark-widgets-row">
+              <div className="dark-mini-card" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <Layers size={34} color="var(--accent-yellow)" style={{ marginBottom: "1rem" }} />
+                <div className="avatar-stack">
+                  <div className="avatar" style={{ background: "#FE4F32" }}>A</div>
+                  <div className="avatar" style={{ background: "#34D399" }}>B</div>
+                  <div className="avatar" style={{ background: "#3B82F6" }}>C</div>
+                </div>
+              </div>
+              <div className="dark-mini-card" style={{ textAlign: "left" }}>
+                <div className="transactions-label">Transactions</div>
+                <div className="transactions-badge"><ArrowUp size={13} /> +14%</div>
+                <div className="transactions-value">43K</div>
+              </div>
+            </div>
+            <h3 className="widget-dark-title">Widget control</h3>
+            <p className="widget-dark-desc">Reports provide a comprehensive overview of important aspects of web analytics</p>
+          </div>
+        </div>
+
+        {/* Stats — counter animates on scroll */}
+        <div className="stats-section">
+          <div className="stats-left">
+            <span className="stats-upto">Up to</span>
+            <span className="stats-number">0%</span>
+          </div>
+          <p className="stats-desc">
+            Increase your analytics efficiency by up to 45%. Unique algorithms provide insights from data, reduce time for analysis and save time for making important, informed decisions
+          </p>
+        </div>
+      </section>
+
+      {/* ===== Section 3: Case Studies Grid (Portfolio Grid) ===== */}
+      <section className="portfolio-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "5rem" }}>
         <div className="portfolio-header">
-          <h2 className="portfolio-title">Your key to strategic success through analytics</h2>
+          <h2 className="portfolio-title">Case Studies & Success Stories</h2>
           <p className="portfolio-subtitle">Explore how we turn search data into organic growth and high rankings.</p>
         </div>
 
@@ -352,17 +458,6 @@ export default function Home() {
             </div>
           </div>
 
-        </div>
-
-        {/* Stats — counter animates on scroll */}
-        <div className="stats-section">
-          <div className="stats-left">
-            <span className="stats-upto">Up to</span>
-            <span className="stats-number">0%</span>
-          </div>
-          <p className="stats-desc">
-            Increase your analytics efficiency by up to 45%. Unique algorithms provide insights from data, reduce time for analysis and save time for making important, informed decisions
-          </p>
         </div>
       </section>
       {/* ===== Section 3: Maximize Efficiency ===== */}
