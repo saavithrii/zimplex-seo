@@ -366,154 +366,223 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Section 3: Turning Data into Actions ===== */}
-      <section className="actions-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "2rem" }}>
+      {/* ===== Section 3.5: Turning Data into Actions ===== */}
+      <section className="actions-section">
         <div className="actions-bg-grid"></div>
 
-        <div className="actions-content-row">
-          {/* Left Column */}
-          <div className="actions-text-col">
-            <h2 className="actions-heading">Turning data into real<br/>actions and ideas.</h2>
-            
-            <div className="accordion-list">
-              <div className="accordion-item">
-                <span>Instant Insights</span>
-                <button className="accordion-btn"><Plus size={16} strokeWidth={2.5}/></button>
-              </div>
-              <div className="accordion-item">
-                <span>AI technology</span>
-                <button className="accordion-btn"><Plus size={16} strokeWidth={2.5}/></button>
-              </div>
-              <div className="accordion-item">
-                <span>Easy integration</span>
-                <button className="accordion-btn"><Plus size={16} strokeWidth={2.5}/></button>
+        <div className="actions-container">
+          <div className="actions-content-row">
+            {/* Left Column */}
+            <div className="actions-text-col">
+              <h2 className="actions-heading">Turning data into real<br/>actions and ideas.</h2>
+              
+              <div className="accordion-list">
+                <div className="accordion-item">
+                  <span>Instant Insights</span>
+                  <button className="accordion-btn"><Plus size={16} strokeWidth={2.5}/></button>
+                </div>
+                <div className="accordion-item">
+                  <span>AI technology</span>
+                  <button className="accordion-btn"><Plus size={16} strokeWidth={2.5}/></button>
+                </div>
+                <div className="accordion-item">
+                  <span>Easy integration</span>
+                  <button className="accordion-btn"><Plus size={16} strokeWidth={2.5}/></button>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Column: Devices Mockup */}
-          <div className="devices-mockup-col">
-             {/* Tablet */}
-             <div className="tablet-mockup">
-                <div className="tablet-screen">
-                  <div className="tablet-header-bar">
-                    <div className="tablet-logo-pill">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="18" cy="5" r="3"/>
-                        <circle cx="6" cy="12" r="3"/>
-                        <circle cx="18" cy="19" r="3"/>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-                      </svg>
-                      zimplex
+            {/* Right Column: Devices Mockup */}
+            <div className="devices-mockup-col">
+               {/* Tablet */}
+               <div className="tablet-mockup">
+                  <div className="tablet-screen">
+                    <div className="tablet-header-bar">
+                      <div className="tablet-logo-pill">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="18" cy="5" r="3"/>
+                          <circle cx="6" cy="12" r="3"/>
+                          <circle cx="18" cy="19" r="3"/>
+                          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                        </svg>
+                        zimplex
+                      </div>
+                      <div className="tablet-search-pill"><Search size={12}/> Search</div>
                     </div>
-                    <div className="tablet-search-pill"><Search size={12}/> Search</div>
+                    
+                    <div className="tablet-body-content">
+                       <div className="tablet-stats-top">
+                         <div>
+                           <div className="mockup-label">Revenue amount</div>
+                           <div className="mockup-value">$1 342,567 <span className="mockup-badge"><ArrowUp size={10}/> +21%</span></div>
+                         </div>
+                         <div className="tablet-nav-pills">
+                           <span>42%</span><span>26%</span><span>20%</span><span>27%</span>
+                         </div>
+                       </div>
+                       
+                       <div className="tablet-chart-bars"></div>
+                       <div className="tablet-chart-area"></div>
+                       
+                       {/* Overlay UI inside tablet */}
+                       <div className="tablet-overlay-ui">
+                         <div className="tablet-nav-bar">
+                           <span className="active">Dashboard</span>
+                           <span>Reports</span>
+                           <span>Documents</span>
+                           <span>History</span>
+                           <span>Settings</span>
+                         </div>
+                         <div className="tablet-cards-row">
+                           <div className="tablet-card">
+                             <div className="mockup-label">Sales revenue</div>
+                             <div className="tablet-card-val">$ 132.4K</div>
+                             <div className="tablet-card-icon-yellow"><BarChart2 size={12}/></div>
+                           </div>
+                           <div className="tablet-card">
+                             <div className="mockup-label">Visit statistics</div>
+                             <div className="tablet-card-val">24.2K</div>
+                             <div className="tablet-card-icon-green"><Activity size={12}/></div>
+                           </div>
+                         </div>
+                       </div>
+                    </div>
                   </div>
-                  <div className="tablet-body-content">
-                     <div className="mockup-label">Revenue amount</div>
-                     <div className="mockup-value">$1 342,567 <span className="mockup-badge"><ArrowUp size={10}/> +21%</span></div>
-                     
-                     <div className="tablet-chart-bars"></div>
-                     <div className="tablet-chart-area"></div>
-                  </div>
-                </div>
-             </div>
+               </div>
 
-             {/* Phone */}
-             <div className="phone-mockup">
-                <div className="phone-screen">
-                  <div className="phone-notch"></div>
-                  <div className="phone-header-icons">
-                     <Menu size={18} strokeWidth={2.5} /> <Bell size={18} strokeWidth={2.5} />
+               {/* Phone */}
+               <div className="phone-mockup">
+                  <div className="phone-screen">
+                    <div className="phone-notch"></div>
+                    <div className="phone-header-icons">
+                       <Menu size={18} strokeWidth={2.5} /> <Bell size={18} strokeWidth={2.5} />
+                    </div>
+                    <div className="phone-body-content">
+                       <div className="mockup-label">Revenue amount</div>
+                       <div className="mockup-value" style={{fontSize: "2rem"}}>$1 342,567 <span className="mockup-badge"><ArrowUp size={10}/> +21%</span></div>
+                       
+                       <div className="phone-chart-area"></div>
+                       <div className="phone-chart-bars"></div>
+                       
+                       <div className="phone-report-card">
+                          <div className="phone-card-title">Data report</div>
+                          <div className="phone-report-grid">
+                             <div className="phone-report-stat">
+                                <div className="phone-stat-icon-red"><Activity size={10} color="white"/></div>
+                                <div>
+                                  <div className="phone-stat-label">Total profit</div>
+                                  <div className="phone-stat-val">$ 264.2K</div>
+                                </div>
+                             </div>
+                             <div className="phone-report-stat">
+                                <div className="phone-stat-icon-yellow"><BarChart2 size={10}/></div>
+                                <div>
+                                  <div className="phone-stat-label">Sales revenue</div>
+                                  <div className="phone-stat-val">$ 132.4K</div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
                   </div>
-                  <div className="phone-body-content">
-                     <div className="mockup-label">Revenue amount</div>
-                     <div className="mockup-value" style={{fontSize: "1.8rem"}}>$1 342,567 <span className="mockup-badge"><ArrowUp size={10}/> +21%</span></div>
-                     
-                     <div className="phone-chart-area"></div>
-                     <div className="phone-chart-bars"></div>
-                     
-                     <div className="phone-report-card">
-                        <div className="phone-card-title">Data report</div>
-                        <div className="phone-report-grid">
-                           <div className="phone-report-stat">
-                              <div className="phone-stat-icon-red"><Activity size={10} color="white"/></div>
-                              <div>
-                                <div className="phone-stat-label">Total profit</div>
-                                <div className="phone-stat-val">$ 264.2K</div>
-                              </div>
-                           </div>
-                           <div className="phone-report-stat">
-                              <div className="phone-stat-icon-yellow"><BarChart2 size={10}/></div>
-                              <div>
-                                <div className="phone-stat-label">Sales revenue</div>
-                                <div className="phone-stat-val">$ 132.4K</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                </div>
-             </div>
+               </div>
+            </div>
           </div>
+          
+          {/* Giant Red Text */}
+          <div className="giant-bg-text">Zimplex</div>
         </div>
-        
-        {/* Giant Red Text */}
-        <div className="giant-bg-text">Zimplex</div>
       </section>
 
-      {/* ===== Section 4: Maximize Efficiency ===== */}
-      <section className="maximize-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "3rem" }}>
-
-        {/* Headline */}
-        <div className="maximize-headline">
-          <div className="maximize-line">
-            <span className="maximize-word-dark">Maximize</span>
-            <span className="maximize-word-faded">efficiency</span>
-          </div>
-          <div className="maximize-line">
-            <span className="maximize-word-dark">with our intuitive</span>
-          </div>
+      {/* ===== Section 4: Get Started (Final Section) ===== */}
+      <section className="get-started-section">
+        {/* Soft shadow orange icon */}
+        <div className="get-started-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
         </div>
 
-        {/* Middle Row */}
-        <div className="maximize-middle">
-          <div ref={statWidgetRef} className="stat-widget">
-            <div className="stat-icon-gray">
-              <Activity size={30} strokeWidth={2.5} color="#ff4f32" />
-            </div>
-            <div className="stat-yellow-circle">
-              <div className="stat-percent">45%</div>
-              <div className="stat-label">System grow<br/>faster</div>
-            </div>
-          </div>
+        <h2 className="get-started-title">Get Started</h2>
+        <p className="get-started-desc">
+          Turn information into advantage! Start using<br/>Zimplex today. Sign up for a free trial.
+        </p>
 
-          <div style={{ flex: 1 }} />
-
-          <div className="yellow-pill">
-            <div className="yellow-pill-track">
-              <span>analytics service&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-              <span>analytics service&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-              <span>analytics service&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-              <span>analytics service&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-            </div>
-          </div>
+        <div className="get-started-ctas">
+          <a href="#" className="btn-demo-pill">Request a demo</a>
+          <a href="#" className="btn-start-pill">Start for free</a>
         </div>
-
-        <div className="maximize-divider" />
-
-        <div className="maximize-bottom">
-          <p className="maximize-desc">
-            Explore traffic sources, page behavior, conversions and more to gain deep insight
-            into your audience. With us, your business doesn&apos;t just adapt – it evolves
-          </p>
-          <div className="maximize-ctas">
-            <a href="#" className="btn-demo">Request a demo</a>
-            <a href="#" className="btn-start">Start for free</a>
-          </div>
-        </div>
-
       </section>
+
+      {/* ===== Footer ===== */}
+      <footer className="footer-section">
+        <div className="footer-container">
+          {/* Top Row: Links & Email */}
+          <div className="footer-top-row">
+            <div className="footer-nav-links">
+              <a href="#">About</a>
+              <a href="#">Why Us</a>
+              <a href="#">Platform</a>
+              <a href="#">Pricing</a>
+              <a href="#">Contacts</a>
+            </div>
+            <a href="mailto:hello@zimplex.com" className="footer-email">
+              hello@zimplex.com
+            </a>
+          </div>
+
+          <div className="footer-divider"></div>
+
+          {/* Middle Row: Addresses & Socials */}
+          <div className="footer-middle-row">
+            <div className="footer-addresses">
+              <div className="footer-address">
+                <h4>Warrensville Heights</h4>
+                <p>14418 Vineyard Drive, NC 44128</p>
+              </div>
+              <div className="footer-address" style={{ marginLeft: "5rem" }}>
+                <h4>Saint Louis</h4>
+                <p>1366 Penn Street 63101</p>
+              </div>
+            </div>
+            
+            <div className="footer-socials">
+              <a href="#">Linkedin</a>
+              <a href="#">Instagram</a>
+              <a href="#">Facebook</a>
+            </div>
+          </div>
+
+          {/* Bottom Row: Logo & Policy & QR */}
+          <div className="footer-bottom-row">
+            <div className="footer-logo">
+              Zimplex<sup>®</sup>
+            </div>
+            
+            <div className="footer-policies">
+              <a href="#">Privacy policy</a>
+              <a href="#">License agreement</a>
+            </div>
+
+            <div className="footer-qr-container">
+              <div className="footer-qr-code">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="7" height="7"/>
+                  <rect x="14" y="3" width="7" height="7"/>
+                  <rect x="3" y="14" width="7" height="7"/>
+                  <path d="M14 14h2v2h-2z"/>
+                  <path d="M18 16h3v3h-3z"/>
+                  <path d="M14 18h2v3h-2z"/>
+                  <path d="M20 14h1v1h-1z"/>
+                  <path d="M16 20h2v1h-2z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
