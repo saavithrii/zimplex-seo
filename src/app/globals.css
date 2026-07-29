@@ -985,3 +985,406 @@ a { text-decoration: none; color: inherit; }
   opacity: 0.9;
   transform: translateY(-1px);
 }
+
+/* ===================================================
+   Section 3.5 — Turning Data into Actions
+   =================================================== */
+.actions-section {
+  position: relative;
+  background-color: #FAFAFA;
+  border-radius: 2.5rem;
+  margin: 0 1rem 5rem;
+  padding: 5rem 3rem 8rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Subtle grid background */
+.actions-bg-grid {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, #ececec 1px, transparent 1px),
+    linear-gradient(to bottom, #ececec 1px, transparent 1px);
+  z-index: -2;
+  opacity: 0.7;
+}
+
+.actions-content-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Column */
+.actions-text-col {
+  flex: 1;
+  max-width: 480px;
+}
+
+.actions-heading {
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 3.5rem;
+  color: #111;
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.accordion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 1.25rem 1.75rem;
+  border-radius: 99px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+  font-size: 1.15rem;
+  font-weight: 500;
+  border: 1px solid #f2f2f2;
+}
+
+.accordion-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.accordion-btn:hover {
+  background: #e5e5e5;
+  transform: scale(1.05);
+}
+
+/* Right Column (Devices) */
+.devices-mockup-col {
+  flex: 1.3;
+  position: relative;
+  min-height: 480px;
+}
+
+.tablet-mockup {
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 650px;
+  height: 420px;
+  background: #151515;
+  border-radius: 20px;
+  padding: 15px 15px 0;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.tablet-screen {
+  background: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tablet-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.tablet-logo-pill {
+  background: #111;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.tablet-search-pill {
+  background: #f5f5f5;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #888;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tablet-body-content {
+  padding: 25px;
+  flex: 1;
+  position: relative;
+}
+
+.mockup-label {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.mockup-value {
+  font-size: 2.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.mockup-badge {
+  font-size: 0.7rem;
+  background: #ECFDF5;
+  color: var(--accent-green);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transform: translateY(-8px);
+}
+
+.tablet-chart-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: var(--accent-orange);
+  /* Simplistic polygon for area chart to match design */
+  clip-path: polygon(0 60%, 12% 50%, 25% 70%, 38% 30%, 50% 50%, 62% 20%, 75% 60%, 88% 40%, 100% 30%, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+.tablet-chart-bars {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: #FAFAFA;
+  /* Thick light gray blocks behind */
+  clip-path: polygon(0 50%, 12% 40%, 25% 60%, 38% 20%, 50% 40%, 62% 10%, 75% 50%, 88% 30%, 100% 20%, 100% 100%, 0 100%);
+  z-index: 0;
+  border-top: 20px solid #f0f0f0;
+}
+
+/* Phone Mockup */
+.phone-mockup {
+  position: absolute;
+  top: 50px;
+  left: -40px;
+  width: 260px;
+  height: 520px;
+  background: #111;
+  border-radius: 36px;
+  padding: 10px;
+  box-shadow: -15px 25px 50px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.phone-screen {
+  background: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 24px;
+  background: #111;
+  border-radius: 0 0 14px 14px;
+  z-index: 20;
+}
+
+.phone-header-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 18px 15px;
+  color: #111;
+}
+
+.phone-body-content {
+  padding: 0 18px;
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-chart-area {
+  margin-top: 15px;
+  height: 100px;
+  background: var(--accent-orange);
+  margin-left: -18px;
+  margin-right: -18px;
+  clip-path: polygon(0 70%, 16% 50%, 33% 80%, 50% 40%, 66% 60%, 83% 30%, 100% 50%, 100% 100%, 0 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.phone-chart-bars {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  height: 130px;
+  background: #FAFAFA;
+  clip-path: polygon(0 60%, 16% 40%, 33% 70%, 50% 30%, 66% 50%, 83% 20%, 100% 40%, 100% 100%, 0 100%);
+  z-index: 0;
+  border-top: 15px solid #f0f0f0;
+}
+
+.phone-report-card {
+  background: white;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  border: 1px solid #f5f5f5;
+  margin-top: -15px; /* Overlap chart */
+  z-index: 2;
+  position: relative;
+}
+
+.phone-card-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.phone-report-grid {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-report-stat {
+  flex: 1;
+  background: #FAFAFA;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phone-stat-icon-red {
+  width: 20px;
+  height: 20px;
+  background: var(--accent-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-stat-icon-yellow {
+  width: 20px;
+  height: 20px;
+  background: var(--accent-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+}
+
+.phone-stat-label {
+  font-size: 0.6rem;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.phone-stat-val {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Giant background text */
+.giant-bg-text {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(8rem, 25vw, 22rem);
+  font-weight: 700;
+  color: var(--accent-orange);
+  line-height: 0.75;
+  letter-spacing: -0.04em;
+  z-index: -1;
+  white-space: nowrap;
+  opacity: 0.95;
+}
+
+@media (max-width: 1024px) {
+  .actions-content-row {
+    flex-direction: column;
+  }
+  .devices-mockup-col {
+    width: 100%;
+    min-height: 500px;
+    margin-top: 2rem;
+  }
+  .tablet-mockup {
+    right: 0;
+    width: 100%;
+    max-width: 650px;
+  }
+  .phone-mockup {
+    left: 10px;
+  }
+  .giant-bg-text {
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .actions-heading {
+    font-size: 2.2rem;
+  }
+  .tablet-mockup {
+    display: none;
+  }
+  .phone-mockup {
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    top: 0;
+  }
+}

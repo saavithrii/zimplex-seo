@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { Play, Zap, Activity, Layers, ArrowUp, BarChart2 } from "lucide-react";
+import { Play, Zap, Activity, Layers, ArrowUp, BarChart2, Plus, Search, Menu, Bell } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -366,7 +366,103 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Section 3: Maximize Efficiency ===== */}
+      {/* ===== Section 3: Turning Data into Actions ===== */}
+      <section className="actions-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "2rem" }}>
+        <div className="actions-bg-grid"></div>
+
+        <div className="actions-content-row">
+          {/* Left Column */}
+          <div className="actions-text-col">
+            <h2 className="actions-heading">Turning data into real<br/>actions and ideas.</h2>
+            
+            <div className="accordion-list">
+              <div className="accordion-item">
+                <span>Instant Insights</span>
+                <button className="accordion-btn"><Plus size={16} strokeWidth={2.5}/></button>
+              </div>
+              <div className="accordion-item">
+                <span>AI technology</span>
+                <button className="accordion-btn"><Plus size={16} strokeWidth={2.5}/></button>
+              </div>
+              <div className="accordion-item">
+                <span>Easy integration</span>
+                <button className="accordion-btn"><Plus size={16} strokeWidth={2.5}/></button>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Devices Mockup */}
+          <div className="devices-mockup-col">
+             {/* Tablet */}
+             <div className="tablet-mockup">
+                <div className="tablet-screen">
+                  <div className="tablet-header-bar">
+                    <div className="tablet-logo-pill">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="18" cy="5" r="3"/>
+                        <circle cx="6" cy="12" r="3"/>
+                        <circle cx="18" cy="19" r="3"/>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                      </svg>
+                      zimplex
+                    </div>
+                    <div className="tablet-search-pill"><Search size={12}/> Search</div>
+                  </div>
+                  <div className="tablet-body-content">
+                     <div className="mockup-label">Revenue amount</div>
+                     <div className="mockup-value">$1 342,567 <span className="mockup-badge"><ArrowUp size={10}/> +21%</span></div>
+                     
+                     <div className="tablet-chart-bars"></div>
+                     <div className="tablet-chart-area"></div>
+                  </div>
+                </div>
+             </div>
+
+             {/* Phone */}
+             <div className="phone-mockup">
+                <div className="phone-screen">
+                  <div className="phone-notch"></div>
+                  <div className="phone-header-icons">
+                     <Menu size={18} strokeWidth={2.5} /> <Bell size={18} strokeWidth={2.5} />
+                  </div>
+                  <div className="phone-body-content">
+                     <div className="mockup-label">Revenue amount</div>
+                     <div className="mockup-value" style={{fontSize: "1.8rem"}}>$1 342,567 <span className="mockup-badge"><ArrowUp size={10}/> +21%</span></div>
+                     
+                     <div className="phone-chart-area"></div>
+                     <div className="phone-chart-bars"></div>
+                     
+                     <div className="phone-report-card">
+                        <div className="phone-card-title">Data report</div>
+                        <div className="phone-report-grid">
+                           <div className="phone-report-stat">
+                              <div className="phone-stat-icon-red"><Activity size={10} color="white"/></div>
+                              <div>
+                                <div className="phone-stat-label">Total profit</div>
+                                <div className="phone-stat-val">$ 264.2K</div>
+                              </div>
+                           </div>
+                           <div className="phone-report-stat">
+                              <div className="phone-stat-icon-yellow"><BarChart2 size={10}/></div>
+                              <div>
+                                <div className="phone-stat-label">Sales revenue</div>
+                                <div className="phone-stat-val">$ 132.4K</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+             </div>
+          </div>
+        </div>
+        
+        {/* Giant Red Text */}
+        <div className="giant-bg-text">Zimplex</div>
+      </section>
+
+      {/* ===== Section 4: Maximize Efficiency ===== */}
       <section className="maximize-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "3rem" }}>
 
         {/* Headline */}
