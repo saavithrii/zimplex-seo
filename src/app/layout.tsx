@@ -8,8 +8,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Ramos Analytics",
-  description: "Analytics that helps you shape the future",
+  title: "Zimplex SEO — Rank Higher. Grow Faster.",
+  description: "SEO that helps you dominate search and shape the future of your brand.",
 };
 
 export default function RootLayout({

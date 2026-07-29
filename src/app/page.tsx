@@ -191,19 +191,27 @@ export default function Home() {
       <div style={{ width: "100%", padding: "0 1rem", maxWidth: "80rem", margin: "0 auto" }}>
         <header className="header-nav">
           <div className="header-logo">
-            <div className="logo-icon"><Layers size={14} /></div>
-            ramos
+            <div className="logo-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="18" cy="5" r="3"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+            </div>
+            zimplex
           </div>
 
           <nav className="nav-links">
-            <Link href="#">Dashboard</Link>
-            <Link href="#">Reports</Link>
-            <Link href="#">Documents</Link>
-            <Link href="#">History</Link>
-            <Link href="#">Settings</Link>
+            <Link href="#">Services</Link>
+            <Link href="#">Rankings</Link>
+            <Link href="#">Audit</Link>
+            <Link href="#">Pricing</Link>
+            <Link href="#">Contact</Link>
           </nav>
 
-          <Link href="#" className="btn-signup">Sign Up</Link>
+          <Link href="#" className="btn-signup">Get Started</Link>
         </header>
       </div>
 
@@ -211,7 +219,7 @@ export default function Home() {
       <section className="hero-section" style={{ maxWidth: "80rem" }}>
         <div className="hero-content" ref={heroLinesRef}>
 
-          {/* Line 1: [gray+orange icons] Analytics */}
+          {/* Line 1: [gray+orange icons] SEO */}
           <div className="hero-line">
             <div className="icon-pair">
               <div ref={iconGrayRef} className="icon-gray">
@@ -225,23 +233,23 @@ export default function Home() {
                 </svg>
               </div>
             </div>
-            <h1 className="hero-title">Analytics</h1>
+            <h1 className="hero-title">SEO</h1>
           </div>
 
-          {/* Line 2: that helps you */}
+          {/* Line 2: that ranks you */}
           <div className="hero-line">
             <h1 className="hero-title">that</h1>
-            <h1 className="hero-title hero-helps">helps</h1>
+            <h1 className="hero-title hero-helps">ranks</h1>
             <h1 className="hero-title">you</h1>
           </div>
 
-          {/* Line 3: shape [yellow icon] the future */}
+          {/* Line 3: higher [yellow icon] in search */}
           <div className="hero-line">
-            <h1 className="hero-title">shape</h1>
+            <h1 className="hero-title">higher</h1>
             <div ref={iconYellowRef} className="icon-yellow">
               <BarChart2 size={36} strokeWidth={2.5} />
             </div>
-            <h1 className="hero-title">the future</h1>
+            <h1 className="hero-title">in search</h1>
           </div>
         </div>
 
