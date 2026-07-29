@@ -223,12 +223,7 @@ export default function Home() {
           {/* Right Column */}
           <div className="studio-hero-right" ref={heroDescRef}>
             <div className="studio-showreel-card">
-              <img src="/images/showreel_collage.png" alt="Zimplex Showreel" className="studio-showreel-img" />
-              
-              <div className="studio-play-btn">
-                <div className="play-triangle"></div>
-                <div className="play-text">play showreel</div>
-              </div>
+              <img src="/images/analytics_dashboard.png" alt="Zimplex SEO Analytics Dashboard" className="studio-showreel-img" />
             </div>
           </div>
         </div>
