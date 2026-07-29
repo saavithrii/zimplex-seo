@@ -69,17 +69,17 @@ export default function Home() {
         ease: "power3.out",
       });
 
-      /* ---- Section 2: widget cards stagger in ---- */
-      gsap.from([".widget-light", ".widget-dark"], {
+      /* ---- Section 2: portfolio cards stagger in ---- */
+      gsap.from(".portfolio-card", {
         scrollTrigger: {
-          trigger: ".widgets-grid",
+          trigger: ".portfolio-grid",
           start: "top 80%",
           toggleActions: "play none none none",
         },
-        y: 40,
+        y: 45,
         opacity: 0,
-        duration: 0.7,
-        stagger: 0.15,
+        duration: 0.8,
+        stagger: 0.18,
         ease: "power3.out",
       });
 
@@ -308,84 +308,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Section 2: Key Benefits ===== */}
-      <section className="content-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "4rem" }}>
-        <div className="content-header">
-          <h2 className="content-title">Your key to strategic success through analytics</h2>
-          <p className="content-subtitle">Ready for exciting, instantaneous, all-accessible insights in real time?</p>
+      {/* ===== Section 2: Case Studies Grid ===== */}
+      <section className="portfolio-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "4rem" }}>
+        <div className="portfolio-header">
+          <h2 className="portfolio-title">Your key to strategic success through analytics</h2>
+          <p className="portfolio-subtitle">Explore how we turn search data into organic growth and high rankings.</p>
         </div>
 
-        {/* Widgets Grid */}
-        <div className="widgets-grid">
-
-          {/* Light Card */}
-          <div className="widget-light">
-            <div className="widget-light-content">
-              <div className="report-badge">Setting up reports</div>
-              <h3 className="widget-light-title">Fast and easy access to analytics</h3>
-              <p className="widget-light-desc">
-                One platform is a comprehensive system of solutions that will be the first step towards digitalization of your business!
-              </p>
+        {/* Case Studies Grid */}
+        <div className="portfolio-grid">
+          
+          {/* Card 1 (Left - Wide) */}
+          <div className="portfolio-card card-wide">
+            <div className="card-image-wrapper bg-green">
+              <div className="quick-view-badge">quick view</div>
+              <img src="/images/seo_chart_floating.png" alt="SEO Keywords Rank Visibility" className="portfolio-img" />
             </div>
-
-            {/* Sales Statistic Card */}
-            <div className="sales-card">
-              <h4 className="sales-header">Sales statistic</h4>
-              <div className="sales-profit-row">
-                <div className="profit-icon"><Layers size={26} /></div>
-                <div>
-                  <div className="profit-label">Total profit</div>
-                  <div className="profit-value">$ 264,2K</div>
-                </div>
-              </div>
-              <div className="visitors-box">
-                <div className="visitors-label">Visitors</div>
-                <div className="visitors-row">
-                  <span className="visitors-value">56K</span>
-                  <span className="badge-green"><ArrowUp size={11} /> +14%</span>
-                </div>
-              </div>
-              <div>
-                <div className="visit-stats-label">Visit statistics</div>
-                <svg width="100%" height="75" viewBox="0 0 260 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 65 L37 48 L74 55 L111 38 L148 45 L185 18 L222 28 L260 8" stroke="var(--accent-yellow)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                  <circle cx="0"   cy="65" r="3.5" fill="var(--accent-yellow)" />
-                  <circle cx="37"  cy="48" r="3.5" fill="var(--accent-yellow)" />
-                  <circle cx="74"  cy="55" r="3.5" fill="var(--accent-yellow)" />
-                  <circle cx="111" cy="38" r="3.5" fill="var(--accent-yellow)" />
-                  <circle cx="148" cy="45" r="3.5" fill="var(--accent-yellow)" />
-                  <circle cx="185" cy="18" r="3.5" fill="var(--accent-yellow)" />
-                  <circle cx="222" cy="28" r="3.5" fill="var(--accent-yellow)" />
-                  <circle cx="260" cy="8"  r="3.5" fill="var(--accent-yellow)" />
-                </svg>
-                <div className="rate-badge">
-                  <div className="rate-label">Rate</div>
-                  <div className="rate-value">+ 58%</div>
-                </div>
-              </div>
+            <div className="card-text-block">
+              <h3 className="card-title">Keywords Ranking</h3>
+              <p className="card-subtitle">Organic keyword tracking for global brands</p>
             </div>
           </div>
 
-          {/* Dark Card */}
-          <div className="widget-dark">
-            <div className="dark-widgets-row">
-              <div className="dark-mini-card" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <Layers size={34} color="var(--accent-yellow)" style={{ marginBottom: "1rem" }} />
-                <div className="avatar-stack">
-                  <div className="avatar" style={{ background: "#FE4F32" }}>A</div>
-                  <div className="avatar" style={{ background: "#34D399" }}>B</div>
-                  <div className="avatar" style={{ background: "#3B82F6" }}>C</div>
-                </div>
-              </div>
-              <div className="dark-mini-card" style={{ textAlign: "left" }}>
-                <div className="transactions-label">Transactions</div>
-                <div className="transactions-badge"><ArrowUp size={13} /> +14%</div>
-                <div className="transactions-value">43K</div>
-              </div>
+          {/* Card 2 (Middle - Small) */}
+          <div className="portfolio-card card-small">
+            <div className="card-image-wrapper bg-white">
+              <img src="/images/seo_people_collage.png" alt="SEO Team Collaboration" className="portfolio-img img-contain" />
             </div>
-            <h3 className="widget-dark-title">Widget control</h3>
-            <p className="widget-dark-desc">Reports provide a comprehensive overview of important aspects of web analytics</p>
+            <div className="card-text-block">
+              <h3 className="card-title">SEO Optimization</h3>
+              <p className="card-subtitle">Growth analysis by search specialists</p>
+            </div>
           </div>
+
+          {/* Card 3 (Right - Medium) */}
+          <div className="portfolio-card card-medium">
+            <div className="card-image-wrapper bg-dark">
+              <img src="/images/seo_growth_logo.png" alt="Traffic Boost Chart" className="portfolio-img" />
+            </div>
+            <div className="card-text-block">
+              <h3 className="card-title">Traffic Boost</h3>
+              <p className="card-subtitle">Search visibility audit and analytics</p>
+            </div>
+          </div>
+
         </div>
 
         {/* Stats — counter animates on scroll */}

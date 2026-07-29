@@ -2601,4 +2601,144 @@ a { text-decoration: none; color: inherit; }
   }
 }
 
+/* ===================================================
+   Section 2: Portfolio Case Studies Grid (Tubik Style)
+   =================================================== */
+.portfolio-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.portfolio-header {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.portfolio-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.portfolio-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1.3fr;
+  gap: 2.5rem;
+  width: 100%;
+  margin-bottom: 6rem;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+  transition: transform 0.3s;
+}
+
+.portfolio-card:hover .card-image-wrapper {
+  transform: translateY(-5px);
+}
+
+.portfolio-card:hover .portfolio-img {
+  transform: scale(1.03);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.portfolio-img.img-contain {
+  object-fit: cover;
+}
+
+/* Background Card Colors */
+.bg-green { background: #09211a; }
+.bg-white { background: #f4f4f5; }
+.bg-dark { background: #1c2621; }
+
+/* Quick View Badge */
+.quick-view-badge {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: lowercase;
+  z-index: 5;
+}
+
+.quick-view-badge::before {
+  content: "▶";
+  font-size: 0.7rem;
+}
+
+.card-text-block {
+  padding-left: 0.5rem;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.03em;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .card-image-wrapper {
+    height: 350px;
+  }
+}
+
 
