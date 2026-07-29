@@ -83,19 +83,7 @@ export default function Home() {
         ease: "power3.out",
       });
 
-      /* ---- Section 3: portfolio cards stagger in ---- */
-      gsap.from(".portfolio-card", {
-        scrollTrigger: {
-          trigger: ".portfolio-grid",
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-        y: 45,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.18,
-        ease: "power3.out",
-      });
+
 
       /* ---- Section 2: 45% counter counts up ---- */
       const statsObj = { val: 0 };
@@ -443,52 +431,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Section 3: Case Studies Grid (Portfolio Grid) ===== */}
-      <section className="portfolio-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "5rem" }}>
-        <div className="portfolio-header">
-          <h2 className="portfolio-title">Case Studies & Success Stories</h2>
-          <p className="portfolio-subtitle">Explore how we turn search data into organic growth and high rankings.</p>
-        </div>
 
-        {/* Case Studies Grid */}
-        <div className="portfolio-grid">
-          
-          {/* Card 1 (Left - Wide) */}
-          <div className="portfolio-card card-wide">
-            <div className="card-image-wrapper bg-green">
-              <div className="quick-view-badge">quick view</div>
-              <img src="/images/seo_chart_floating.png" alt="SEO Keywords Rank Visibility" className="portfolio-img" />
-            </div>
-            <div className="card-text-block">
-              <h3 className="card-title">Keywords Ranking</h3>
-              <p className="card-subtitle">Organic keyword tracking for global brands</p>
-            </div>
-          </div>
-
-          {/* Card 2 (Middle - Small) */}
-          <div className="portfolio-card card-small">
-            <div className="card-image-wrapper bg-white">
-              <img src="/images/seo_people_collage.png" alt="SEO Team Collaboration" className="portfolio-img img-contain" />
-            </div>
-            <div className="card-text-block">
-              <h3 className="card-title">SEO Optimization</h3>
-              <p className="card-subtitle">Growth analysis by search specialists</p>
-            </div>
-          </div>
-
-          {/* Card 3 (Right - Medium) */}
-          <div className="portfolio-card card-medium">
-            <div className="card-image-wrapper bg-dark">
-              <img src="/images/seo_growth_logo.png" alt="Traffic Boost Chart" className="portfolio-img" />
-            </div>
-            <div className="card-text-block">
-              <h3 className="card-title">Traffic Boost</h3>
-              <p className="card-subtitle">Search visibility audit and analytics</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
       {/* ===== Section 3: Maximize Efficiency ===== */}
       <section className="maximize-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "3rem" }}>
 
