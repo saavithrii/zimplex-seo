@@ -172,9 +172,10 @@ export default function Home() {
       {/* Header */}
       <header className="studio-header">
         <div className="studio-logo">
-          <svg className="studio-logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-            <path d="M12 6a3.5 3.5 0 0 0-3.5 3.5c0 .77.34 1.34.8 1.8l-1.3 2.7H16l-1.3-2.7c.46-.46.8-1.03.8-1.8A3.5 3.5 0 0 0 12 6z"/>
+          <svg className="studio-logo-icon" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="black"/>
+            <path d="M26 62C24 54 26 44 32 36C40 28 52 24 64 28C69 30 73 34 75 39C76 41 73 44 70 44C65 44 59 46 54 49C49 52 46 57 46 62C46 65 42 67 39 67C34 67 27 64 26 62Z" fill="white"/>
+            <circle cx="56" cy="36" r="3.5" fill="black"/>
           </svg>
           zimplex
         </div>
