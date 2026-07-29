@@ -224,12 +224,41 @@ export default function Home() {
             </h1>
 
             <div className="studio-hero-awards" ref={heroCtasRef}>
-              <div className="awards-label">PRACTICE, EXCELLENCE, RECOGNITION</div>
+              <div className="awards-label">INTEGRATIONS & GOOGLE SEO PARTNER</div>
               <div className="awards-logos">
-                <div className="award-logo">W.</div>
-                <div className="award-logo">FWA</div>
-                <div className="award-logo">CSS</div>
-                <div className="award-logo">AWWWARDS</div>
+                <div className="award-logo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: "6px", verticalAlign: "middle" }}>
+                    <rect x="3" y="14" width="4" height="6" rx="1"/>
+                    <rect x="10" y="8" width="4" height="12" rx="1"/>
+                    <rect x="17" y="3" width="4" height="17" rx="1"/>
+                  </svg>
+                  <span>Analytics</span>
+                </div>
+                <div className="award-logo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: "6px", verticalAlign: "middle" }}>
+                    <path d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    <path d="M7 11h6"/>
+                  </svg>
+                  <span>Search Console</span>
+                </div>
+                <div className="award-logo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: "6px", verticalAlign: "middle" }}>
+                    <path d="M12 2L9 8h6l-3-6z"/>
+                    <path d="M9 8h6v12H9z"/>
+                    <path d="M6 20h12"/>
+                  </svg>
+                  <span>Lighthouse</span>
+                </div>
+                <div className="award-logo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: "6px", verticalAlign: "middle", display: "inline-block" }}>
+                    <path d="M21.35 11.1h-9.17v2.73h6.51c-.33 1.56-1.56 2.95-3.24 3.51v2.77h5.08c3.07-2.83 4.82-7 4.82-11.83 0-.6-.05-1.18-.15-1.72z" fill="#4285F4"/>
+                    <path d="M12.18 21.43c2.75 0 5.06-.91 6.75-2.46l-5.08-2.77c-1.37.93-3.14 1.47-5.08 1.47-3.91 0-7.22-2.64-8.4-6.22H1.2v2.85c2.32 4.6 7.07 7.13 11.98 7.13z" fill="#34A853"/>
+                    <path d="M3.78 11.45c-.3-1-.3-2.07 0-3.07V5.53H1.2a11.94 11.94 0 0 0 0 8.77l2.58-2.85z" fill="#FBBC05"/>
+                    <path d="M12.18 2.57c1.88 0 3.57.65 4.9 1.92l3.66-3.66A11.95 11.95 0 0 0 1.2 5.53l2.58 2.85c1.18-3.58 4.49-6.22 8.4-6.22z" fill="#EA4335"/>
+                  </svg>
+                  <span>Google Partner</span>
+                </div>
               </div>
             </div>
           </div>

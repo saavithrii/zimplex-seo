@@ -2381,15 +2381,24 @@ a { text-decoration: none; color: inherit; }
 
 .awards-logos {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 2.2rem;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: #111;
+  color: #222;
+  letter-spacing: -0.02em;
 }
 
 .award-logo {
-  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.award-logo:hover {
+  opacity: 1;
 }
 
 /* Right Column */
