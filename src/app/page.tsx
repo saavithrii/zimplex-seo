@@ -646,26 +646,24 @@ export default function Home() {
 
       {/* Header */}
       <header className="studio-header">
-        <div className="studio-logo">
+        <Link href="/" className="studio-logo" style={{ textDecoration: "none" }}>
           <svg className="studio-logo-icon" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="50" r="50" fill="black"/>
             <path d="M26 62C24 54 26 44 32 36C40 28 52 24 64 28C69 30 73 34 75 39C76 41 73 44 70 44C65 44 59 46 54 49C49 52 46 57 46 62C46 65 42 67 39 67C34 67 27 64 26 62Z" fill="white"/>
             <circle cx="56" cy="36" r="3.5" fill="black"/>
           </svg>
           zimplex
-        </div>
+        </Link>
 
         <nav className="studio-nav">
-          <Link href="#">work</Link>
-          <Link href="#">services</Link>
-          <Link href="#">about</Link>
-          <Link href="#">blog</Link>
-          <Link href="#">lab</Link>
+          <Link href="/">work</Link>
+          <Link href="/services">services</Link>
+          <Link href="/about">about</Link>
+          <Link href="/blog">blog</Link>
         </nav>
 
         <div className="studio-actions">
-          <span className="studio-lang">UA</span>
-          <Link href="#" className="studio-contact">contact us</Link>
+          <Link href="/contact" className="studio-contact">contact us</Link>
         </div>
       </header>
 
@@ -1184,11 +1182,11 @@ export default function Home() {
           {/* Top Row: Links & Email */}
           <div className="footer-top-row">
             <div className="footer-nav-links">
-              <a href="#">About</a>
+              <Link href="/about">About</Link>
               <a href="#">Why Us</a>
               <a href="#">Platform</a>
               <a href="#">Pricing</a>
-              <a href="#">Contacts</a>
+              <Link href="/contact">Contacts</Link>
             </div>
             <a href="mailto:hello@zimplex.com" className="footer-email">
               hello@zimplex.com
@@ -1204,10 +1202,6 @@ export default function Home() {
                 <h4>Warrensville Heights</h4>
                 <p>14418 Vineyard Drive, NC 44128</p>
               </div>
-              <div className="footer-address" style={{ marginLeft: "5rem" }}>
-                <h4>Saint Louis</h4>
-                <p>1366 Penn Street 63101</p>
-              </div>
             </div>
             
             <div className="footer-socials">
@@ -1217,30 +1211,21 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Bottom Row: Logo & Policy & QR */}
+          {/* Bottom Row: Logo & Copyright Bar */}
           <div className="footer-bottom-row">
             <div className="footer-logo">
-              Zimplex<sup>®</sup>
+              Zimplex SEO<sup>®</sup>
+            </div>
+          </div>
+
+          <div className="footer-legal-bar">
+            <div className="footer-copyright">
+              © 2026 Zimplex Global Pvt Ltd. All rights reserved.
             </div>
             
             <div className="footer-policies">
-              <a href="#">Privacy policy</a>
-              <a href="#">License agreement</a>
-            </div>
-
-            <div className="footer-qr-container">
-              <div className="footer-qr-code">
-                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="7" height="7"/>
-                  <rect x="14" y="3" width="7" height="7"/>
-                  <rect x="3" y="14" width="7" height="7"/>
-                  <path d="M14 14h2v2h-2z"/>
-                  <path d="M18 16h3v3h-3z"/>
-                  <path d="M14 18h2v3h-2z"/>
-                  <path d="M20 14h1v1h-1z"/>
-                  <path d="M16 20h2v1h-2z"/>
-                </svg>
-              </div>
+              <Link href="/privacy-policy">Privacy policy</Link>
+              <Link href="/license-agreement">License agreement</Link>
             </div>
           </div>
         </div>
