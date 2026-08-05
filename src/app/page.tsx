@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Play, Zap, Activity, Layers, ArrowUp, BarChart2, Plus, Search, Menu, Bell, Sparkles, Users, Target, TrendingUp, UserCheck, ChevronUp, ChevronDown, User } from "lucide-react";
+import { Play, Zap, Activity, Layers, ArrowUp, BarChart2, Plus, Search, Menu, X, ArrowRight, Bell, Sparkles, Users, Target, TrendingUp, UserCheck, ChevronUp, ChevronDown, User } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -161,6 +161,7 @@ const PERSONAS_DATA = [
 export default function Home() {
   const [activeRoleIndex, setActiveRoleIndex] = useState(0);
   const [heroWordIndex, setHeroWordIndex] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   /* ---- Refs ---- */
   const heroBadgeRef  = useRef<HTMLDivElement>(null);
@@ -664,7 +665,40 @@ export default function Home() {
 
         <div className="studio-actions">
           <Link href="/contact" className="studio-contact">contact us</Link>
+          <button
+            className="mobile-burger-btn"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={20} color="#0F172A" /> : <Menu size={20} color="#0F172A" />}
+          </button>
         </div>
+
+        {/* Compact Floating Mobile Popover Menu */}
+        {isMobileMenuOpen && (
+          <>
+            <div className="mobile-popover-backdrop" onClick={() => setIsMobileMenuOpen(false)} />
+            <div className="mobile-popover-card">
+              <nav className="mobile-popover-links">
+                <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="mobile-popover-link">
+                  <span>work</span>
+                </Link>
+                <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="mobile-popover-link">
+                  <span>services</span>
+                </Link>
+                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="mobile-popover-link">
+                  <span>about</span>
+                </Link>
+                <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="mobile-popover-link">
+                  <span>blog</span>
+                </Link>
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="mobile-popover-link mobile-popover-contact">
+                  <span>contact us</span>
+                </Link>
+              </nav>
+            </div>
+          </>
+        )}
       </header>
 
       {/* ===== Hero Section ===== */}
@@ -719,11 +753,11 @@ export default function Home() {
                   <span>Lighthouse</span>
                 </div>
                 <div className="award-logo">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: "6px", verticalAlign: "middle", display: "inline-block" }}>
-                    <path d="M21.35 11.1h-9.17v2.73h6.51c-.33 1.56-1.56 2.95-3.24 3.51v2.77h5.08c3.07-2.83 4.82-7 4.82-11.83 0-.6-.05-1.18-.15-1.72z" fill="#4285F4"/>
-                    <path d="M12.18 21.43c2.75 0 5.06-.91 6.75-2.46l-5.08-2.77c-1.37.93-3.14 1.47-5.08 1.47-3.91 0-7.22-2.64-8.4-6.22H1.2v2.85c2.32 4.6 7.07 7.13 11.98 7.13z" fill="#34A853"/>
-                    <path d="M3.78 11.45c-.3-1-.3-2.07 0-3.07V5.53H1.2a11.94 11.94 0 0 0 0 8.77l2.58-2.85z" fill="#FBBC05"/>
-                    <path d="M12.18 2.57c1.88 0 3.57.65 4.9 1.92l3.66-3.66A11.95 11.95 0 0 0 1.2 5.53l2.58 2.85c1.18-3.58 4.49-6.22 8.4-6.22z" fill="#EA4335"/>
+                  <svg width="20" height="20" viewBox="0 0 24 24" style={{ marginRight: "8px", verticalAlign: "middle", display: "inline-block", flexShrink: 0 }}>
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
                   </svg>
                   <span>Google Partner</span>
                 </div>
@@ -999,24 +1033,26 @@ export default function Home() {
 
 
       {/* ===== Section 3: Maximize Efficiency ===== */}
-      <section className="maximize-section" style={{ width: "100%", maxWidth: "80rem", marginTop: "1.8rem" }}>
+      <section className="maximize-section">
+        <div className="maximize-section-bg-glow" />
 
         {/* Headline */}
         <div className="maximize-headline">
-          <div className="maximize-line">
-            <span className="maximize-word-dark">Maximize</span>
-            <span className="maximize-word-gradient">efficiency</span>
+          <div className="maximize-badge">
+            <Zap size={14} color="#FE4F32" />
+            <span>GROWTH ENGINE</span>
           </div>
-          <div className="maximize-line">
-            <span className="maximize-word-dark">with our intuitive</span>
-          </div>
+          <h2 className="maximize-title">
+            Maximize <span className="maximize-word-gradient">efficiency</span><br />
+            <span className="maximize-subhead">with our intuitive suite</span>
+          </h2>
         </div>
 
         {/* Middle Row */}
         <div className="maximize-middle">
           <div ref={statWidgetRef} className="stat-widget">
             <div className="stat-icon-gray">
-              <Activity size={30} strokeWidth={2.5} color="#ff4f32" />
+              <Activity size={30} strokeWidth={2.5} color="#fe4f32" />
             </div>
             <div className="stat-yellow-circle">
               <div className="stat-percent stat-percent-val">0%</div>
@@ -1024,27 +1060,43 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Interactive Automation Chips replacing the old marquee pill */}
+          {/* Interactive Automation Chips */}
           <div className="automation-chips-row">
             <div className="automation-chip chip-yellow">
-              <Zap size={16} color="#0F172A" />
-              <span>Automated Rank Tracking</span>
+              <div className="chip-icon-box">
+                <Zap size={16} color="#0F172A" />
+              </div>
+              <div className="chip-text-content">
+                <span className="chip-title">Automated Rank Tracking</span>
+              </div>
               <span className="chip-badge">+14.2%</span>
             </div>
+
             <div className="automation-chip chip-dark">
-              <Sparkles size={16} color="#FFD13B" />
-              <span>AI Keyword Optimization</span>
+              <div className="chip-icon-box">
+                <Sparkles size={16} color="#FFD13B" />
+              </div>
+              <div className="chip-text-content">
+                <span className="chip-title">AI Keyword Optimization</span>
+              </div>
               <span className="chip-pulse-dot" />
             </div>
+
             <div className="automation-chip chip-white">
-              <TrendingUp size={16} color="#34D399" />
-              <span>Real-Time Traffic Scaling</span>
+              <div className="chip-icon-box">
+                <TrendingUp size={16} color="#34D399" />
+              </div>
+              <div className="chip-text-content">
+                <span className="chip-title">Real-Time Traffic Scaling</span>
+              </div>
+              <span className="chip-meta-tag">99% ROI</span>
             </div>
           </div>
         </div>
 
         <div className="maximize-divider" />
 
+        {/* Bottom Row */}
         <div className="maximize-bottom">
           <p className="maximize-desc">
             Explore traffic sources, page behavior, conversions and more to gain deep insight
@@ -1052,10 +1104,11 @@ export default function Home() {
           </p>
           <div className="maximize-ctas">
             <a href="#" className="btn-demo">Request a demo</a>
-            <a href="#" className="btn-start">Start for free</a>
+            <a href="#" className="btn-start">
+              <span>Start for free</span>
+            </a>
           </div>
         </div>
-
       </section>
 
       {/* ===== Section 4: Full Control ===== */}
