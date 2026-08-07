@@ -1,0 +1,63 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Build Docker image
+        run: docker build -t zimplex-seo:latest .
+
+      - name: Save Docker image
+        run: docker save zimplex-seo:latest > zimplex-seo.tar
+
+      - name: Copy Docker image to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "zimplex-seo.tar"
+          target: "/tmp"
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            # Load the Docker image
+            docker load -i /tmp/zimplex-seo.tar
+            
+            # Stop the old container if it exists
+            docker stop zimplex-seo || true
+            docker rm zimplex-seo || true
+            
+            # Run the new container on port 3004
+            docker run -d --name zimplex-seo -p 3004:3004 --restart unless-stopped zimplex-seo:latest
+            
+            # Clean up the tar file
+            rm /tmp/zimplex-seo.tar
+            
+            # Optional: prune unused images to save space
+            docker image prune -f
