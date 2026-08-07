@@ -10,23 +10,24 @@ interface LogEntry {
   text: string;
 }
 
-export default function AboutPage() {
-  const stats = [
-    { number: "$120M+", label: "Client Organic Revenue", codeTag: "[0x1 REVENUE]" },
-    { number: "99.4%", label: "Enterprise Retention", codeTag: "[SLA 99.4%]" },
-    { number: "1,500+", label: "#1 SERP Rankings", codeTag: "[SERP #1]" },
-    { number: "24h SLA", label: "Guaranteed Turnaround", codeTag: "[24h LOG]" },
-  ];
+const stats = [
+  { number: "$120M+", label: "Client Organic Revenue", codeTag: "[0x1 REVENUE]" },
+  { number: "99.4%", label: "Enterprise Retention", codeTag: "[SLA 99.4%]" },
+  { number: "1,500+", label: "#1 SERP Rankings", codeTag: "[SERP #1]" },
+  { number: "24h SLA", label: "Guaranteed Turnaround", codeTag: "[24h LOG]" },
+];
 
-  const poolLogs = [
-    { type: "success", text: "CRAWL AGENT: Googlebot-Desktop HTTP/2 200 OK — 14ms" },
-    { type: "info", text: "INDEX CHECK: 99.8% Indexation Rate verified across 24,000 pages" },
-    { type: "purple", text: "NLP PARSER: Vector embedding similarity score: 0.964 [TOP MATCH]" },
-    { type: "yellow", text: "BOT AUDIT: Blocked 42 malicious scraper IPs from consuming crawl budget" },
-    { type: "success", text: "SERP TRACKER: +14 positions gained for keyword 'SaaS Technical SEO'" },
-    { type: "info", text: "HREFLANG MAPPER: Validated 18 multi-region language subdomains" },
-    { type: "purple", text: "BACKLINK AUDIT: Disavowed 12 spam domain footprints [CLEAN EQUITY]" },
-  ];
+const poolLogs = [
+  { type: "success", text: "CRAWL AGENT: Googlebot-Desktop HTTP/2 200 OK — 14ms" },
+  { type: "info", text: "INDEX CHECK: 99.8% Indexation Rate verified across 24,000 pages" },
+  { type: "purple", text: "NLP PARSER: Vector embedding similarity score: 0.964 [TOP MATCH]" },
+  { type: "yellow", text: "BOT AUDIT: Blocked 42 malicious scraper IPs from consuming crawl budget" },
+  { type: "success", text: "SERP TRACKER: +14 positions gained for keyword 'SaaS Technical SEO'" },
+  { type: "info", text: "HREFLANG MAPPER: Validated 18 multi-region language subdomains" },
+  { type: "purple", text: "BACKLINK AUDIT: Disavowed 12 spam domain footprints [CLEAN EQUITY]" },
+];
+
+export default function AboutPage() {
 
   const [logs, setLogs] = useState<LogEntry[]>([
     { id: 1, time: "01:08:10", type: "info", text: "Initializing Zimplex Neural Crawler v4.8.0-release..." },
@@ -51,7 +52,7 @@ export default function AboutPage() {
 
       setLogs((prevLogs) => {
         const nextId = prevLogs.length ? prevLogs[prevLogs.length - 1].id + 1 : 1;
-        const updated = [...prevLogs, { id: nextId, time: timeStr, type: randomLog.type as any, text: randomLog.text }];
+        const updated = [...prevLogs, { id: nextId, time: timeStr, type: randomLog.type as LogEntry["type"], text: randomLog.text }];
         // Keep last 15 logs
         return updated.slice(-15);
       });
@@ -120,26 +121,6 @@ export default function AboutPage() {
     },
   ];
 
-  const team = [
-    {
-      initials: "AM",
-      name: "Alex Morgan",
-      role: "Chief Executive & Co-Founder",
-      bio: "Former Technical SEO Lead at enterprise SaaS platforms with 12+ years of organic search architecture experience.",
-    },
-    {
-      initials: "SR",
-      name: "Sophia Reed",
-      role: "VP of Data & AI Engineering",
-      bio: "Specializes in semantic NLP models, log file analysis, and algorithmic change forecasting.",
-    },
-    {
-      initials: "DV",
-      name: "David Vance",
-      role: "Head of Digital PR & Link Authority",
-      bio: "Directs high-DR editorial placements, brand entity building, and data-driven outreach campaigns.",
-    },
-  ];
 
   return (
     <div className="about-page-wrapper">
@@ -170,7 +151,8 @@ export default function AboutPage() {
       <section className="cyber-hero-section">
         <div className="cyber-badge">
           <span className="contact-badge-dot"></span>
-          // SYSTEM.INIT :: ZIMPLEX_CORE_ENGINE
+          {/* SYSTEM.INIT :: ZIMPLEX_CORE_ENGINE */}
+          {"// SYSTEM.INIT :: ZIMPLEX_CORE_ENGINE"}
         </div>
 
         <h1 className="cyber-hero-title">

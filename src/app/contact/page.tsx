@@ -77,7 +77,7 @@ export default function ContactPage() {
       <section className="contact-hero-section">
         <div className="contact-badge">
           <span className="contact-badge-dot"></span>
-          LET'S BUILD SOMETHING GREAT
+          LET&apos;S BUILD SOMETHING GREAT
         </div>
         <h1 className="contact-title">
           Dominating Search Starts with a <span className="contact-title-accent">Conversation.</span>
@@ -174,7 +174,7 @@ export default function ContactPage() {
 
                   {/* Service Chips */}
                   <div className="contact-field-group">
-                    <label className="service-chips-label">Services You're Interested In</label>
+                    <label className="service-chips-label">Services You&apos;re Interested In</label>
                     <div className="service-chips-grid">
                       {availableServices.map((service) => {
                         const isSelected = selectedServices.includes(service);

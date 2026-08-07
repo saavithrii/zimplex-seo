@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Play, Zap, Activity, Layers, ArrowUp, BarChart2, Plus, Search, Menu, X, ArrowRight, Bell, Sparkles, Users, Target, TrendingUp, UserCheck, ChevronUp, ChevronDown, User } from "lucide-react";
+import { Zap, Activity, Layers, ArrowUp, BarChart2, Search, Menu, X, Sparkles, Users, Target, TrendingUp, UserCheck, User } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

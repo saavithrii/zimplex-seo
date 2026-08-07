@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 interface PostData {
@@ -211,7 +210,7 @@ export default async function SingleArticlePage({ params }: { params: Promise<{ 
 
         {/* Call to Action Banner */}
         <section className="services-cta-banner" style={{ marginTop: "4rem" }}>
-          <h2 className="services-cta-title">Need Help Scaling Your Domain's Technical SEO?</h2>
+          <h2 className="services-cta-title">Need Help Scaling Your Domain&apos;s Technical SEO?</h2>
           <p className="services-cta-subtitle">
             Speak with our senior strategy team today to review your domain metrics and unlock custom growth targets.
           </p>

@@ -187,7 +187,7 @@ export default function ServicesPage() {
               Engagement Models & Packages
             </h2>
             <p style={{ fontSize: "1rem", color: "#64748B" }}>
-              Select the tier that aligns with your organization's organic search ambitions.
+              Select the tier that aligns with your organization&apos;s organic search ambitions.
             </p>
           </div>
 

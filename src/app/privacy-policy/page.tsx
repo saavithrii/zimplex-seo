@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
             <section id="overview" className="legal-section">
               <h2 className="legal-section-h2">1. Overview & Scope</h2>
               <p>
-                Zimplex SEO ("Zimplex", "we", "our", or "us") provides enterprise SEO optimization, organic growth strategies, and digital advisory services. This Privacy Policy governs all visitors, clients, and partners interacting with our platform, website (zimplex.com), and consulting tools.
+                Zimplex SEO (&quot;Zimplex&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) provides enterprise SEO optimization, organic growth strategies, and digital advisory services. This Privacy Policy governs all visitors, clients, and partners interacting with our platform, website (zimplex.com), and consulting tools.
               </p>
               <div className="legal-callout">
                 <strong>Key Takeaway:</strong> We never sell your personal data or domain strategy insights to third-party advertisers. All audited data remains strictly confidential under enterprise NDA standards.

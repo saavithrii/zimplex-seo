@@ -79,7 +79,7 @@ export default function LicenseAgreementPage() {
             <section id="deliverables" className="legal-section">
               <h2 className="legal-section-h2">2. Intellectual Property Rights</h2>
               <p>
-                Zimplex retains sole ownership and IP rights over underlying analytics software, proprietary SEO scraping tools, custom crawling scripts, internal algorithms, and standardized frameworks ("Zimplex Core IP").
+                Zimplex retains sole ownership and IP rights over underlying analytics software, proprietary SEO scraping tools, custom crawling scripts, internal algorithms, and standardized frameworks (&quot;Zimplex Core IP&quot;).
               </p>
               <ul>
                 <li><strong>Client Materials:</strong> Clients retain full ownership of existing website content, logos, trademarks, and search analytics data.</li>
